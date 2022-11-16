@@ -4,6 +4,15 @@
   --clr-font: hsl(232, 10%, 56%);
   --clr-bg-active-1: hsl(234, 25%, 52%);
   --clr-bg-active-2: hsl(341, 100%, 83%);
+
+  --ff-primary: 'Plus Jakarta Sans', sans-serif;
+
+  --ff-body: var(--ff-primary)
+  --ff-heading: var(--ff-primary)
+
+  --fw-regular: 400;
+  --ff-semi-bold: 500;
+  --ff-extra-bold: 800;
 }
 
 
