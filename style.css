@@ -1,7 +1,11 @@
 :root {
-  --clr-bg-primary: linear-gradient(180deg, #FF6F48 0.04%, #F02AA6 100%);
-  --clr-bg-secondary: linear-gradient(180deg, #4851FF 0%, #F02AA6 99.92%);
+  /*the most used one*/
+  --clr-bg-primary-gradient: linear-gradient(180deg, #FF6F48 0.04%, #F02AA6 100%);
+  --clr-bg-secondary-gradient: linear-gradient(180deg, #4851FF 0%, #F02AA6 99.92%);
+  --clr-bg: hsl(233,54%,16%);
   --clr-font: hsl(232, 10%, 56%);
+
+  /*background color on hover state*/
   --clr-bg-active-1: hsl(234, 25%, 52%);
   --clr-bg-active-2: hsl(341, 100%, 83%);
 
@@ -11,9 +15,23 @@
   --ff-heading: var(--ff-primary)
 
   --fw-regular: 400;
-  --ff-semi-bold: 500;
-  --ff-extra-bold: 800;
+  --fw-semi-bold: 500;
+  --fw-extra-bold: 800;
+
+  --fs-body: 1.125rem;
+  --fs-heading: 2rem;
+  --fs-heading-main: 3.5rem;
+  --fs-body-mob: 1rem;
+  --fs-heading-mob: 1.5rem;
+  --fs-heading-main-mob: 2.5rem
+
+
+  --fs-button: var(--fs-body);
 }
+
+ /*font-size for mobile and tablet*/
+
+
 
 
 /* Box sizing rules */
@@ -30,17 +48,6 @@
   font: inherit;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
 html, body{
     height: 100%;
 }
@@ -51,50 +58,30 @@ body {
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 img,
 picture, svg {
-  max-width: 100%;
+  /* max-width: 100%; */
   display: block;
 }
 
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-body{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    width: 1440px;
+body {
+    font-family: var(--ff-primary) ;
+    min-width: 300px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
-img{
+a img{
     width: 111px;
     height: 27.7px;
 }
 
 .container{
-    width: calc(100% - (165px + 165px));
+    width: 77%;
     margin: 0 auto;
 }
+
 
 .header{
     display: flex;
@@ -104,6 +91,7 @@ img{
 }
 
 .btn{
+    font-size: var(--fs-body);
     width: 167px;
     color: #FFF;
     border: none;
@@ -111,13 +99,53 @@ img{
 
 .header-footer-btn{
     height: 56px;
-    background-color: #13183F;
+    background-color: var(--clr-bg);
     border-radius: 28px;
     padding: 14px 32px;
+}
+
+/*mobile header*/
+@media only screen and (max-width: 376px){
+  .container {
+    width: 91.5%;
+  }
+
+  a img{
+    width: 87px;
+    height: 25px;
+  }
+
+  .header{
+    margin-top: 16px;
+  }
+
+  .btn{
+    font-size: var(--fs-body-mob);
+    width: 140px;
+  }
+
+  .header-footer-btn {
+    height: 48px;
+    padding: 9px 24px;
+  }
+}
+
+
+/*tablet header*/
+@media only screen and (min-width: 377px) and (max-width:768px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    margin-top: 24px;
+  }
 }
 
 button:hover{
     background-color: var(--clr-bg-active-1) ;
     cursor: pointer;
 }
+
+
 
