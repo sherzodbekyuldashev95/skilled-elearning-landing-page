@@ -5,34 +5,31 @@
   --clr-bg: hsl(233,54%,16%);
   --clr-font: hsl(232, 10%, 56%);
 
+  --clr-button-hero: var(--clr-bg-primary-gradient);
+
   /*background color on hover state*/
   --clr-bg-active-1: hsl(234, 25%, 52%);
   --clr-bg-active-2: hsl(341, 100%, 83%);
 
   --ff-primary: 'Plus Jakarta Sans', sans-serif;
 
-  --ff-body: var(--ff-primary)
-  --ff-heading: var(--ff-primary)
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
 
   --fw-regular: 400;
   --fw-semi-bold: 500;
-  --fw-extra-bold: 800;
+  --fw-bold: 700;
 
   --fs-body: 1.125rem;
   --fs-heading: 2rem;
   --fs-heading-main: 3.5rem;
   --fs-body-mob: 1rem;
   --fs-heading-mob: 1.5rem;
-  --fs-heading-main-mob: 2.5rem
+  --fs-heading-main-mob: 2.5rem;
 
 
   --fs-button: var(--fs-body);
 }
-
- /*font-size for mobile and tablet*/
-
-
-
 
 /* Box sizing rules */
 *,
@@ -52,24 +49,22 @@ html, body{
     height: 100%;
 }
 
-/* Set core body defaults */
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
 /* Make images easier to work with */
 img,
 picture, svg {
-  /* max-width: 100%; */
+  max-width: 100%;
   display: block;
 }
 
 body {
     font-family: var(--ff-primary) ;
+    font-size: var(--fs-body);
+    color: var(--clr-font);
     min-width: 300px;
     max-width: 1440px;
     margin: 0 auto;
+    font-weight: var(--fw-semi-bold);
+    line-height: 1.5;
 }
 
 a img{
@@ -86,7 +81,7 @@ a img{
 .header{
     display: flex;
     justify-content: space-between;
-    margin-top: 38.8px;
+    margin-top: 2.425rem;
     align-items: center;
 }
 
@@ -104,8 +99,20 @@ a img{
     padding: 14px 32px;
 }
 
-/*mobile header*/
+.header-footer-btn:hover {
+  background-color: var(--clr-bg-active-1);
+  cursor: pointer;
+}
+
+
+/*mobile*/
 @media only screen and (max-width: 376px){
+  body {
+    font-size: var(--fs-body-mob);
+    color: var(--clr-font);
+    line-height: 1.6;
+    }
+
   .container {
     width: 91.5%;
   }
@@ -116,7 +123,7 @@ a img{
   }
 
   .header{
-    margin-top: 16px;
+    margin-top: 1rem;
   }
 
   .btn{
@@ -131,8 +138,14 @@ a img{
 }
 
 
-/*tablet header*/
-@media only screen and (min-width: 377px) and (max-width:768px) {
+/*tablet*/
+@media only screen and (min-width: 376px) and (max-width:768px) {
+  body {
+      font-size: var(--fs-body-mob);
+      color: var(--clr-font);
+      line-height: 1.6;
+    }
+
   .container {
     width: 90%;
   }
@@ -140,12 +153,136 @@ a img{
   .header {
     margin-top: 24px;
   }
+
+  .btn {
+    font-size: var(--fs-body-mob);
+    width: 140px;
+  }
+
+  .header-footer-btn {
+    height: 48px;
+    padding: 9px 24px;
+  }
 }
 
-button:hover{
-    background-color: var(--clr-bg-active-1) ;
-    cursor: pointer;
+/*main*/
+
+/*hero section*/
+.hero-msg {
+  max-width: 457px;
+  min-width: 343px;
+  width: 45%;
+  /* height: 32.3%; */
 }
+
+.flex {
+  display: flex;
+}
+
+.hero-msg h1 {
+  font-size: var(--fs-heading-main);
+  font-weight: var(--fw-bold);
+  line-height: 1.27;
+  color: var(--clr-bg);
+  margin-top: 8.75rem;
+}
+
+.hero-par{
+  width: 97%;
+  margin-top: 1.8rem;
+}
+
+.hero-btn {
+  margin-top: 2.5rem;
+  height: 63px;
+  padding: 19px 31px 16px;
+  background: var(--clr-button-hero);
+  border-radius: 31.5px;
+}
+
+.hero-btn:hover {
+  background: var(--clr-bg-active-2);
+  cursor: pointer;
+}
+
+img[src*='hero-desktop-.svg'] {
+  position: relative;
+  left: 205px;
+  bottom: 100px;
+  width: 59%;
+  z-index: -10;
+}
+
+img[src*='hero-mobile.svg']{
+  display: none;
+}
+
+
+/*mobile and tablet*/
+
+@media only screen and (max-width: 768px){
+   .hero-msg h1 {
+    font-size: var(--fs-heading-main-mob);
+    font-weight: var(--fw-bold);
+    line-height: 1.25;
+    color: var(--clr-bg);
+    margin-top: 2.4rem;
+  }
+
+  .hero-par {
+    margin-top: 1.6rem;
+  }
+
+  .hero-btn {
+    width: 167px;
+    margin-top: 1.5rem;
+    height: 56px;
+    padding: 15px 38px;
+    background: var(--clr-button-hero);
+    border-radius: 31.5px;
+  }
+}
+
+/*hero mobile*/
+
+@media only screen and (max-width: 760px){
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-msg h1 {
+    margin-top: 2.4rem;
+  }
+
+  img[src*='hero-desktop-.svg'] {
+    display: none;
+  }
+
+  img[src*='hero-mobile.svg'] {
+    display: block;
+  }
+}
+
+/*hero tablet*/
+@media only screen and (min-width:760px) and (max-width:768px) {
+  .hero-msg h1 {
+      margin-top: 6.2rem;
+    }
+
+  img[src*='hero-desktop-.svg'] {
+    position: relative;
+    left: 55px;
+    width: 57.6%;
+    z-index: -10;
+  }
+
+  .hero-par {
+    width: 398px;
+    margin-top: 1.8rem;
+  }
+}
+
 
 
 
