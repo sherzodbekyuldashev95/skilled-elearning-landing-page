@@ -105,13 +105,28 @@ a img{
 }
 
 
-/*mobile*/
-@media only screen and (max-width: 376px){
+/*mobile and tablet*/
+
+@media only screen and (max-width: 768px){
   body {
-    font-size: var(--fs-body-mob);
-    color: var(--clr-font);
-    line-height: 1.6;
+      font-size: var(--fs-body-mob);
+      color: var(--clr-font);
+      line-height: 1.6;
     }
+
+    .btn {
+      font-size: var(--fs-body-mob);
+      width: 140px;
+    }
+
+    .header-footer-btn {
+      height: 48px;
+      padding: 9px 24px;
+    }
+}
+
+/*mobile*/
+@media only screen and (max-width: 767px){
 
   .container {
     width: 91.5%;
@@ -125,26 +140,11 @@ a img{
   .header{
     margin-top: 1rem;
   }
-
-  .btn{
-    font-size: var(--fs-body-mob);
-    width: 140px;
-  }
-
-  .header-footer-btn {
-    height: 48px;
-    padding: 9px 24px;
-  }
 }
 
 
 /*tablet*/
-@media only screen and (min-width: 376px) and (max-width:768px) {
-  body {
-      font-size: var(--fs-body-mob);
-      color: var(--clr-font);
-      line-height: 1.6;
-    }
+@media only screen and (min-width: 767px) and (max-width:768px) {
 
   .container {
     width: 90%;
@@ -154,15 +154,6 @@ a img{
     margin-top: 24px;
   }
 
-  .btn {
-    font-size: var(--fs-body-mob);
-    width: 140px;
-  }
-
-  .header-footer-btn {
-    height: 48px;
-    padding: 9px 24px;
-  }
 }
 
 /*main*/
@@ -214,6 +205,10 @@ img[src*='hero-desktop-.svg'] {
 }
 
 img[src*='hero-mobile.svg']{
+  display: none;
+}
+
+img[src*='hero-tablet.svg'] {
   display: none;
 }
 
@@ -270,9 +265,18 @@ img[src*='hero-mobile.svg']{
       margin-top: 6.2rem;
     }
 
-  img[src*='hero-desktop-.svg'] {
+    img[src*='hero-mobile.svg'] {
+      display: none;
+    }
+
+    img[src*='hero-desktop-.svg'] {
+      display: none;
+    }
+
+  img[src*='hero-tablet.svg'] {
+    display: inline-block;
     position: relative;
-    left: 55px;
+    bottom: 50px;
     width: 57.6%;
     z-index: -10;
   }
@@ -282,6 +286,28 @@ img[src*='hero-mobile.svg']{
     margin-top: 1.8rem;
   }
 }
+
+/*courses section*/
+
+.cta{
+  width: 31.5%;
+  max-width: 350px;
+  height: 28.8%;
+  max-height: 322px;
+  background: var(--clr-bg-primary-gradient);
+  border-radius: 15px;
+  padding: 4rem 2rem 8.6rem;
+}
+
+.cta h2{
+  width: 81.7%;
+  font-size: var(--fs-heading);
+  font-weight: var(--fw-bold);
+  color: #FFF;
+  line-height: 1.25;
+}
+
+
 
 
 
