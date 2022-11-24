@@ -71,6 +71,14 @@ body {
     line-height: 1.5;
 }
 
+@media only screen and (max-width: 1438px){
+  body {
+      font-size: var(--fs-body-mob);
+      color: var(--clr-font);
+      line-height: 1.6;
+    }
+  }
+
 a img{
     width: 111px;
     height: 27.7px;
@@ -85,7 +93,7 @@ a img{
 .header{
     display: flex;
     justify-content: space-between;
-    margin-top: 2.425rem;
+    margin-top: 1.5rem;
     align-items: center;
 }
 
@@ -108,9 +116,21 @@ a img{
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1438px){
+  .btn {
+    font-size: var(--fs-body-mob);
+    width: 140px;
+  }
+
+  .header-footer-btn {
+    height: 48px;
+    padding: 9px 24px;
+  }
+  }
+
 
 /*mobile and tablet*/
-
+/* 
 @media only screen and (max-width: 768px){
   body {
       font-size: var(--fs-body-mob);
@@ -127,10 +147,10 @@ a img{
       height: 48px;
       padding: 9px 24px;
     }
-}
+} */
 
 /*mobile*/
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 766px){
 
   .container {
     width: 91.5%;
@@ -148,7 +168,7 @@ a img{
 
 
 /*tablet*/
-@media only screen and (min-width: 767px) and (max-width:768px) {
+@media only screen and (min-width: 767px) and (max-width:1438px) {
 
   .container {
     width: 90%;
@@ -219,7 +239,7 @@ img[src*='hero-tablet.svg'] {
 
 /*mobile and tablet*/
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1438px){
    .hero-msg h1 {
     font-size: var(--fs-heading-main-mob);
     font-weight: var(--fw-bold);
@@ -243,7 +263,7 @@ img[src*='hero-tablet.svg'] {
 }
 
 /*hero mobile*/
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 766px){
   .flex {
     display: flex;
     flex-direction: column;
@@ -263,7 +283,7 @@ img[src*='hero-tablet.svg'] {
 }
 
 /*hero tablet*/
-@media only screen and (min-width:769px) and (max-width:1439px) {
+@media only screen and (min-width:767px) and (max-width:1439px) {
   .hero-msg h1 {
       margin-top: 6.2rem;
     }
@@ -292,11 +312,18 @@ img[src*='hero-tablet.svg'] {
 
 
 /*courses section*/
+
 .courses{
   background: var(--clr-bg-section-gradient);
+  height: 1695px;
 }
 
 /*mobile and tablet share the same size*/
+
+/* .course-list{
+  margin-bottom: 5rem;
+} */
+
 .cta{
   width: 100%;
   height: 10.8%;
@@ -316,15 +343,15 @@ img[src*='hero-tablet.svg'] {
 
 .course{
   margin-top: 1rem;
-  height: 82.5%;
-  max-height: 283px;
+  /* height: 82.5%; */
+  height: 283px;
   /* padding: 3.5rem 1.8rem 2rem 1.75rem; */
-  /* border: 2px solid red; */
+  border: 2px solid red;
 }
 
 .course img{
   position: absolute;
-  left: 12%;
+  margin-left: 1.75rem;
 
 }
 
@@ -332,9 +359,10 @@ img[src*='hero-tablet.svg'] {
   height: 91.5%;
   max-height: 259px;
   margin-top: 1.5rem;
-  padding: 3.5rem 1.7rem 2rem 1.75rem;
+  padding: 3.5rem 1.5rem 2rem 1.75rem;
   border-radius: 10px;
   box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+  border: 1px solid black;
 }
 
 .course-info h3 {
@@ -353,6 +381,82 @@ img[src*='hero-tablet.svg'] {
   font-size: var(--fs-body);
   font-weight: var(--fw-bold);
 }
+
+@media only screen and (min-width:767px) and (max-width:1439px){
+  
+  .courses{
+    height: 999px;
+  }
+
+  .course{
+    margin-top: 0;
+  }
+  .cta{
+    height: 91.5%;
+    max-height: 259px;
+    margin-top: 1.5rem;
+    padding: 3.5rem 1.4rem 8.6rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+    border: 1px solid black;
+  }
+  
+  .course-list{
+    display: grid;
+    justify-items: start;
+    width: 100%;
+    height: 913px;
+    grid-template: repeat(3, 31%)/repeat(2, 49.2%);
+    gap: 2rem 0.7rem  ;
+  }
+
+  .course-info{
+    padding: 3.5rem 1.1rem 2rem 2rem;
+  }
+}
+
+@media only screen and (min-width:1439px){
+  
+  .courses{
+    height: 888px;
+  }
+ 
+  .course-list{
+    display: grid;
+    /* justify-items: start; */
+    width: 100%;
+    max-width: 1110px;
+    height: 748px;
+    grid-template: repeat(2, 46.26%)/repeat(3, 31.5%);
+    gap: 3.5rem 1.875rem  ;
+  }
+
+  .course{
+    margin-top: 0;
+    max-height: 322px;
+  }
+
+  .cta{
+    height: 91.5%;
+    max-height: 322px;
+    margin-top: 1.5rem;
+    padding: 3.5rem 1.4rem 8.6rem 2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .course-info{
+  height: 100%;
+  max-height: 322px;
+  margin-top: 1.5rem;
+  padding: 5.5rem 2rem 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+  border: 1px solid black;
+    padding: 3.5rem 1.1rem 2rem 2rem;
+  }
+}
+
 
 
 
