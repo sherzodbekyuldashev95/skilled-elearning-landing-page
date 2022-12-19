@@ -1,6 +1,6 @@
 # Frontend Mentor - Skilled e-learning landing page solution 
 
-> ## This is not finished README file
+> here is the link to the website https://sherzodbekyuldashev95.github.io/skilled-elearning-landing-page/
 
 This is a solution to the [Skilled e-learning landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/skilled-elearning-landing-page-S1ObDrZ8q)
 
